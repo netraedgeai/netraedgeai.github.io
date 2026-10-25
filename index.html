@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>NetraEdgeAI – Home Automation, ESP32, Raspberry Pi and Arduino Products</title><meta name="description" content="Order home automation, AI projects and custom hardware built on Raspberry Pi, ESP32, ESP32-CAM and Arduino.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f2236;--mu:#506378;--te:#0082a0;--td:#006680;--or:#ff8a1f;--ln:#cde3ec;--nv:#0b2540;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:linear-gradient(180deg,#e0f1f8 0,#f5fafd 560px);color:var(--ink);font:400 16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Space Grotesk',Inter,sans-serif;line-height:1.1;margin:0;letter-spacing:-.01em}
+a{color:inherit}:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(232,245,251,.92);backdrop-filter:blur(10px);border-bottom:2px solid var(--ln)}
+header.top .w{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;font:700 22px 'Space Grotesk',sans-serif;color:var(--te)}.logo b{color:#d96a00}
+.ib{background:none;border:0;padding:8px;cursor:pointer;color:var(--ink);display:inline-grid;place-items:center}
+.hn{display:flex;gap:6px;align-items:center}
+.dn{display:none;gap:22px}.dn a{text-decoration:none;color:var(--mu);font-weight:500}.dn a:hover{color:var(--te)}
+.eb{font:500 14px 'JetBrains Mono',ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--td);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.eb::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--te);box-shadow:0 0 0 5px rgba(0,130,160,.15)}
+.hero{position:relative;padding:44px 0 30px;overflow:hidden}
+.hero svg.ck{position:absolute;inset:0;width:100%;height:100%;opacity:.8;pointer-events:none}
+.hero .w{position:relative}
+.hero h1{font-size:clamp(36px,8.4vw,66px);font-weight:700;max-width:14ch}.hero h1 em{display:block;font-style:normal;color:var(--te)}
+.sch{display:flex;gap:12px;margin:26px 0 14px;max-width:640px}
+.sch input{flex:1;min-width:0;border:1.5px solid var(--ln);border-radius:16px;padding:16px 18px;font:17px Inter,sans-serif;background:#fff;color:var(--ink)}
+.bt{display:inline-flex;align-items:center;gap:8px;border:1.5px solid transparent;border-radius:16px;padding:15px 24px;font:700 17px Inter,sans-serif;cursor:pointer;text-decoration:none;background:var(--te);color:#fff}
+.bt.or{background:var(--or);color:#2a1500}.bt.ol{background:#fff;color:var(--ink);border-color:var(--ln)}
+.hb{display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin-bottom:20px}
+.pop{font:14px 'JetBrains Mono',monospace;color:var(--mu);margin:22px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}.chip{background:#fff;border:1.5px solid var(--ln);border-radius:999px;padding:9px 16px;font:500 15px Inter;cursor:pointer;color:var(--ink)}.chip:hover{border-color:var(--te)}
+.hero .art{margin-top:28px;background:radial-gradient(circle at 50% 40%,#28497a,#0b1b33 75%);border-radius:28px;padding:22px;display:grid;place-items:center;min-height:240px;border:1px solid #1d3a63}.hero .art svg{max-width:360px;width:100%;height:auto}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:6px 0 10px}
+.st{background:#fff;border:1.5px solid var(--ln);border-radius:22px;text-align:center;padding:18px 8px}.st b{display:block;font:700 34px 'Space Grotesk';line-height:1.1}.st span{font:13px 'JetBrains Mono',monospace;color:var(--mu)}
+section{padding:54px 0}h2{font-size:clamp(28px,5vw,42px);font-weight:700;max-width:22ch}.sub{color:var(--mu);margin:10px 0 22px;max-width:58ch;font-size:17px}
+.card{background:#fff;border:1.5px solid var(--ln);border-radius:26px;overflow:hidden}
+.sp .im{background:linear-gradient(160deg,#d7e7ef,#eef4f8);display:grid;place-items:center;padding:20px;min-height:230px}.sp .im svg{max-width:300px;width:100%;height:auto}
+.sp .bd{padding:24px}.sp h3{font-size:27px;margin:12px 0 8px}.sp p{margin:0 0 16px;color:var(--mu)}
+.meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font:600 14px Inter;color:var(--mu)}
+.pill{background:#dff1f7;color:var(--td);border-radius:12px;padding:6px 12px;font:700 13px Inter;letter-spacing:.06em;text-transform:uppercase}
+.lv{border:1.5px solid var(--ln);border-radius:999px;padding:3px 12px;font:600 13px Inter;background:#fff}.l1{color:#0d8a47}.l2{color:#c46b00}.l3{color:#d1173f}
+.lk{background:none;border:0;color:var(--te);font:700 16px Inter;cursor:pointer;padding:0}
+.tabs{display:flex;gap:6px;overflow-x:auto;background:#eaf3f8;border:1.5px solid var(--ln);border-radius:20px;padding:8px;margin-bottom:20px}
+.tabs button{flex:0 0 auto;border:0;background:none;border-radius:14px;padding:12px 20px;font:600 16px Inter;color:var(--mu);cursor:pointer}.tabs button.on{background:#fff;color:var(--ink);box-shadow:0 2px 8px rgba(0,60,90,.12)}
+.grid{display:grid;gap:16px;grid-template-columns:1fr}.pc{background:#fff;border:1.5px solid var(--ln);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:10px}.pc h3{font-size:21px}.pc p{margin:0;color:var(--mu);font-size:15px;flex:1}
+.steps3{display:grid;gap:16px}.pa{padding:24px}.pa .row{display:flex;justify-content:space-between;font:14px 'JetBrains Mono',monospace;color:var(--mu)}.pa h3{font-size:26px;margin:14px 0 6px}.pa ul{list-style:none;padding:0;margin:14px 0}.pa li{padding:11px 0;border-top:1px solid #e3eef3;color:var(--ink)}
+.nv{background:linear-gradient(170deg,#0e3055,#08182e);color:#e8f1fa;border-radius:30px;padding:28px;border:1px solid #1d3a63}.nv .eb{color:#8bd3e6;border:1.5px solid #29517f;border-radius:999px;padding:8px 14px;display:inline-flex}.nv h2{color:#fff;margin:6px 0 14px}.nv p{color:#b7cbe0}
+.nv ul{list-style:none;padding:0;margin:18px 0 22px;display:grid;gap:12px}.nv li::before{content:"✓";color:#ff8a1f;font-weight:700;margin-right:12px}.nv .bs{display:flex;gap:12px;flex-wrap:wrap}.nv .bt.ol{background:#10294a;color:#fff;border-color:#29517f}
+.scr{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}.bc{flex:0 0 78%;max-width:300px;scroll-snap-align:start;background:#fff;border:1.5px solid var(--ln);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.bc .iv{background:radial-gradient(circle at 50% 40%,#28497a,#0b1b33 80%);border-radius:16px;padding:10px}.bc svg{width:100%;height:auto;display:block}.bc h3{font-size:20px}.bc p{margin:0;color:var(--mu);font-size:14px;flex:1}
+.tl{display:grid;grid-template-columns:1fr 1fr;gap:14px}.tc{background:#fff;border:1.5px solid var(--ln);border-radius:22px;padding:18px}.ti{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:24px;margin-bottom:12px}.tc h3{font-size:19px}.tc p{margin:4px 0 0;color:var(--mu);font-size:14px}
+.wy{display:grid;gap:14px}.wc{background:#fff;border:1.5px solid var(--ln);border-radius:22px;padding:22px}.wc h3{font-size:21px;margin:12px 0 6px}.wc p{margin:0;color:var(--mu)}
+.hw{list-style:none;margin:0;padding:0;display:grid;gap:14px}.hw li{border-left:4px solid var(--or);padding:2px 0 2px 16px}.hw h3{font-size:19px}.hw p{margin:2px 0 0;color:var(--mu)}
+details{background:#fff;border:1.5px solid var(--ln);border-radius:0;padding:0}details:first-of-type{border-radius:18px 18px 0 0}details:last-of-type{border-radius:0 0 18px 18px}details+details{border-top:0}
+summary{list-style:none;cursor:pointer;padding:20px 22px;font:600 18px Inter;display:flex;justify-content:space-between;gap:12px}summary::-webkit-details-marker{display:none}summary::after{content:"+";font-size:26px;line-height:1;color:var(--mu)}details[open] summary::after{content:"–"}details p{margin:0;padding:0 22px 20px;color:var(--mu)}
+.ord{padding:26px}.ord h2{margin-bottom:6px}form{display:grid;gap:14px;margin-top:18px}label{display:grid;gap:6px;font:600 15px Inter;color:var(--mu)}
+input,select,textarea{width:100%;background:#f6fafd;border:1.5px solid var(--ln);border-radius:14px;padding:14px;font:16px Inter,sans-serif;color:var(--ink)}textarea{min-height:100px;resize:vertical}
+#ok{display:none;background:#e9f8ef;border:1.5px solid #8fd6ac;border-radius:18px;padding:22px;margin-top:18px}#ok h3{font-size:23px;margin-bottom:8px}#ok p{margin:0 0 16px}
+footer{border-top:2px solid var(--ln);padding:40px 0 30px;margin-top:20px;background:#f8fcfe}.fg{display:grid;grid-template-columns:1fr 1fr;gap:26px}.fg>div:first-child{grid-column:1/-1}.fg h4{margin:0 0 10px;font:700 18px 'Space Grotesk'}.fg a{display:block;text-decoration:none;color:var(--mu);padding:5px 0}.fg a:hover{color:var(--te)}.cp{margin-top:26px;padding-top:18px;border-top:1px solid var(--ln);text-align:center;font:13px 'JetBrains Mono',monospace;color:var(--mu)}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:60px;height:60px;border-radius:50%;background:#fff;border:1.5px solid var(--ln);box-shadow:0 8px 24px rgba(0,50,80,.22);display:grid;place-items:center;color:var(--te);text-decoration:none}
+#dr{position:fixed;inset:0;z-index:60;display:none}#dr.on{display:block}#dr .ov{position:absolute;inset:0;background:rgba(10,25,45,.55)}#dr aside{position:absolute;top:0;right:0;bottom:0;width:min(86%,360px);background:#f6fafd;display:flex;flex-direction:column;padding:calc(18px + env(safe-area-inset-top,0px)) 22px 22px}#dr nav{display:grid;gap:4px;margin:18px 0;flex:1}#dr nav a{padding:14px 10px;border-radius:12px;text-decoration:none;font:600 18px Inter}#dr nav a:hover{background:#e3f1f7}.dh{display:flex;justify-content:space-between;align-items:center;font:700 20px 'Space Grotesk'}
+@media(min-width:820px){.dn{display:flex}.ib.mb{display:none}.hb{flex-direction:row}.grid{grid-template-columns:repeat(3,1fr)}.steps3{grid-template-columns:repeat(3,1fr)}.sp{display:grid;grid-template-columns:1fr 1fr}.wy{grid-template-columns:repeat(4,1fr)}.tl{grid-template-columns:repeat(3,1fr)}.bc{flex-basis:260px}.hero .art{position:absolute;right:20px;top:36px;width:42%;margin:0}.hero{padding-bottom:50px}.fg{grid-template-columns:2fr 1fr 1fr}.fg>div:first-child{grid-column:auto}.cw{display:grid;grid-template-columns:1fr 1.2fr;gap:30px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body>
+<header class="top"><div class="w"><a class="logo" href="#top" aria-label="NetraEdge AI home"><svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="#ff8a1f" stroke-width="3"/><path d="M5 20c5-8 10-11 15-11s10 3 15 11c-5 8-10 11-15 11S10 28 5 20z" fill="#e3f4f9" stroke="#0082a0" stroke-width="2"/><circle cx="20" cy="20" r="6.5" fill="#ff8a1f"/><circle cx="20" cy="20" r="2.6" fill="#0b2540"/><path d="M20 9v5M20 26v5M9 20h5M26 20h5" stroke="#0082a0" stroke-width="1.6"/></svg>NetraEdge<b>AI</b></a>
+<div class="hn"><nav class="dn"><a href="#catalog">Products</a><a href="#boards">Boards</a><a href="#how">How to order</a><a href="#faq">FAQ</a></nav>
+<button class="ib" id="sb" aria-label="Search products"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+<button class="ib mb" id="mb" aria-label="Open menu"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></div></header>
+
+<div id="dr"><div class="ov" id="ov"></div><aside><div class="dh"><span>Menu</span><button class="ib" id="cl" aria-label="Close menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
+<nav><a href="#catalog">Products</a><a href="#path">Pick a level</a><a href="#boards">Boards</a><a href="#how">How to order</a><a href="#faq">FAQ</a></nav>
+<a class="bt or" href="#order" style="justify-content:center">Place your order</a></aside></div>
+
+<main id="top">
+<div class="hero"><svg class="ck" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 400 600"><g fill="none" stroke="#cde3ec" stroke-width="2"><path d="M0 330h200l40-40h160M150 330v250M300 420h100M60 0v200l60 60"/></g></svg>
+<div class="w"><div class="eb">Electronics built to order</div>
+<h1>From your idea to a working product.<em>Design. Build. Deliver.</em></h1>
+<form class="sch" onsubmit="return false" role="search"><input id="q" type="search" placeholder="Find a product — home automation, RFID, ESP32" aria-label="Search products"><button class="bt" type="button" id="qb">Search</button></form>
+<div class="hb"><a class="bt ol" href="#how">New here? See how to order</a><a class="bt or" href="#order">⚡ Place your order</a></div>
+<div class="pop">Popular searches:</div><div class="chips" id="chips"></div>
+<div class="art" id="hart"></div></div></div>
+
+<div class="w"><div class="stats"><div class="st"><b>5</b><span>Platforms</span></div><div class="st"><b>8+</b><span>Product types</span></div><div class="st"><b>Direct</b><span>Talk to the maker</span></div></div></div>
+
+<section><div class="w"><div class="eb">The workbench</div><h2>Start with something worth ordering.</h2><p class="sub">Real working products for daily use, made to your need.</p>
+<article class="card sp"><div class="im" id="spi"></div><div class="bd"><div class="meta"><span class="pill">Most ordered</span><span>ESP32</span><span class="lv l1">Basic</span></div><h3>Smart home controller</h3><p>Switch lights, fans and motors from your phone, with a manual switch as backup. Add schedules and timers.</p><button class="lk" onclick="order(0)">Order this →</button></div></article></div></section>
+
+<section id="catalog" style="padding-top:20px"><div class="w"><div class="eb">Explore</div><h2>Find your next product</h2><p class="sub">Pick one, or describe your own in the order form.</p>
+<div class="tabs" id="tabs"></div><div class="grid" id="grid"></div></div></section>
+
+<section id="path" style="padding-top:20px"><div class="w"><div class="eb">Start here</div><h2>Pick a level that matches your need</h2><p class="sub">From simple switches to AI-powered systems.</p><div class="steps3" id="lv"></div></div></section>
+
+<section style="padding-top:10px"><div class="w"><div class="nv"><div class="eb">Tested before delivery</div><h2>See it work before you take it.</h2><p>Every product is tested on the bench. We show you a demo, explain how to use it and help you set it up.</p>
+<ul><li>Hardware and code tested together</li><li>Wiring and usage explained simply</li><li>Setup help after delivery</li></ul><div class="bs"><a class="bt or" href="#order">Place your order</a><a class="bt ol" href="#boards">Explore boards</a></div></div></div></section>
+
+<section id="boards"><div class="w"><div class="eb">Learn by board</div><h2>Pick your hardware</h2><p class="sub">Not sure which board you need? We choose the right one for the job.</p><div class="scr" id="bds"></div></div></section>
+
+<section style="padding-top:10px"><div class="w"><div class="eb">Made for every place</div><h2>Built for where you use it</h2><p class="sub">&nbsp;</p>
+<div class="tl"><div class="tc"><div class="ti" style="background:#e3f4f6">🏠</div><h3>Home</h3><p>Lights, fans, water tank, locks</p></div><div class="tc"><div class="ti" style="background:#e7efff">🎓</div><h3>School</h3><p>Projects, labs, attendance</p></div><div class="tc"><div class="ti" style="background:#fff0e3">🏪</div><h3>Shop and office</h3><p>Monitoring and access control</p></div><div class="tc"><div class="ti" style="background:#e6f7ec">🌾</div><h3>Farm</h3><p>Water, soil and motor control</p></div><div class="tc"><div class="ti" style="background:#f1e9ff">🤖</div><h3>AI products</h3><p>Detection, voice, smart alerts</p></div><div class="tc"><div class="ti" style="background:#ffe9ee">🛠️</div><h3>Custom hardware</h3><p>Your own idea, built for you</p></div></div></div></section>
+
+<section><div class="w"><div class="eb">Why NetraEdgeAI</div><h2>Everything between idea and working product</h2><p class="sub">&nbsp;</p>
+<div class="wy"><div class="wc"><div class="ti" style="background:#e3f4f6">🧩</div><h3>Made to order</h3><p>Built for your exact requirement, not a copied kit.</p></div><div class="wc"><div class="ti" style="background:#fff0e3">✅</div><h3>Tested working</h3><p>Checked on the bench before it reaches you.</p></div><div class="wc"><div class="ti" style="background:#e7efff">📱</div><h3>Easy to use</h3><p>Phone control, with manual backup where needed.</p></div><div class="wc"><div class="ti" style="background:#e6f7ec">💬</div><h3>Direct support</h3><p>Talk to the maker on WhatsApp or phone.</p></div></div></div></section>
+
+<section id="how" style="padding-top:10px"><div class="w"><div class="eb">How to order</div><h2>Four simple steps</h2><p class="sub">&nbsp;</p>
+<ol class="hw"><li><h3>1. Send your order</h3><p>Fill the form with your details and what you want built.</p></li><li><h3>2. We confirm</h3><p>We call or WhatsApp you, clear doubts and share the quote and time.</p></li><li><h3>3. We build and test</h3><p>Hardware, code and app are tested before delivery.</p></li><li><h3>4. Delivery and setup</h3><p>You get the working product and help to start using it.</p></li></ol></div></section>
+
+<section id="faq" style="padding-top:10px"><div class="w"><div class="eb">FAQ</div><h2>Common questions</h2><p class="sub">&nbsp;</p>
+<details><summary>Can I get a custom project made?</summary><p>Yes. Describe it in the order form. We tell you if it is possible, the cost and the time.</p></details>
+<details><summary>Do you make projects for school and college?</summary><p>Yes. We build working models and explain how they work so you can present them.</p></details>
+<details><summary>Will it work without internet?</summary><p>Many products also work with manual switches or on the local network. Tell us your need and we plan it that way.</p></details>
+<details><summary>How do I pay and when will I get it?</summary><p>We discuss price, advance and delivery time on call or WhatsApp after you send the order. Nothing is charged on this website.</p></details>
+<details><summary>Which boards do you use?</summary><p>Raspberry Pi, ESP32, ESP32-CAM, ESP32-S3 and Arduino. We pick the best one for your job.</p></details></div></section>
+
+<section id="order" style="padding-top:20px"><div class="w"><div class="card ord"><div class="cw"><div><div class="eb">Order</div><h2>Place your order</h2><p class="sub">Fill your details and what you want built. Your order reaches us on WhatsApp with all details, and you see a confirmation straight away.</p>
+<p>WhatsApp and call: <a href="tel:+919413453099"><b>+91 94134 53099</b></a><br>Email: <a href="mailto:netraedgeai@gmail.com"><b>netraedgeai@gmail.com</b></a></p></div>
+<div><form id="f">
+<label>Your name<input name="name" required autocomplete="name"></label>
+<label>Phone / WhatsApp number<input name="phone" type="tel" required autocomplete="tel"></label>
+<label>Email (optional)<input name="email" type="email" autocomplete="email"></label>
+<label>Full address<textarea name="addr" required autocomplete="street-address" style="min-height:70px"></textarea></label>
+<label>What do you want?<select name="type"><option>Home automation</option><option>AI project / product</option><option>ESP32 project</option><option>ESP32-CAM project</option><option>Arduino project</option><option>Custom hardware</option><option>School / college project</option><option>Other</option></select></label>
+<label>Preferred board<select name="board"><option>Not sure — suggest one</option><option>Raspberry Pi</option><option>ESP32</option><option>ESP32-CAM</option><option>ESP32-S3</option><option>Arduino</option></select></label>
+<label>Budget (optional)<input name="budget" placeholder="e.g. 3000 to 5000"></label>
+<label>Needed by (optional)<input name="date" type="date"></label>
+<label>Describe what to build<textarea name="msg" required placeholder="Example: control 4 lights and 1 fan from phone"></textarea></label>
+<button class="bt or" type="submit" style="justify-content:center">Send order</button></form>
+<div id="ok" role="status"><h3 id="okh"></h3><p id="okp"></p><a class="bt" id="okw" href="#" target="_blank" rel="noopener">Open WhatsApp</a></div></div></div></div></div></section>
+</main>
+
+<footer><div class="w"><div class="fg"><div><a class="logo" href="#top" style="padding:0">NetraEdge<b>AI</b></a><p style="color:var(--mu);max-width:44ch">Home automation, AI projects and custom hardware on Raspberry Pi, ESP32 and Arduino. Built to order.</p></div>
+<div><h4>Explore</h4><a href="#catalog">Products</a><a href="#boards">Boards</a><a href="#how">How to order</a><a href="#faq">FAQ</a></div>
+<div><h4>Contact</h4><a href="https://wa.me/919413453099">WhatsApp</a><a href="tel:+919413453099">+91 94134 53099</a><a href="mailto:netraedgeai@gmail.com">Email</a></div></div>
+<div class="cp">© 2026 NetraEdgeAI. All rights reserved.</div></div></footer>
+<a class="fab" href="https://wa.me/919413453099?text=Hi%20NetraEdgeAI" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.7 7L4 20l1.1-4.9A8 8 0 1 1 21 12z"/></svg></a>
+<script>
+var OWNER_EMAIL="netraedgeai@gmail.com"; // optional: put your email here to also get each request by email (via FormSubmit)
+var OWNER_WA="919413453099";
+var A='<svg viewBox="0 0 320 230" role="img" aria-label="';
+var ART=[A+'Raspberry Pi board"><rect x="30" y="35" width="250" height="160" rx="10" fill="#1f8a4c" stroke="#6df0a6" stroke-width="2"/><rect x="52" y="44" width="190" height="16" fill="#111"/><path d="M56 52h182" stroke="#ffd166" stroke-width="7" stroke-dasharray="4 4"/><rect x="118" y="92" width="56" height="56" rx="4" fill="#1a1a1a" stroke="#aaa"/><text x="146" y="125" font-size="9" fill="#ddd" text-anchor="middle">BCM</text><rect x="256" y="76" width="34" height="34" fill="#cfd6ea"/><rect x="256" y="118" width="34" height="34" fill="#cfd6ea"/><rect x="60" y="176" width="44" height="20" fill="#999"/><rect x="120" y="176" width="24" height="20" fill="#777"/><circle cx="46" cy="52" r="4" fill="#0b3d20"/><circle cx="264" cy="182" r="4" fill="#0b3d20"/><text x="60" y="130" font-size="13" font-weight="700" fill="#fff">Raspberry Pi</text></svg>',
+A+'ESP32-CAM board"><path d="M200 54l10-18 10 18 10-18 10 18 10-18" fill="none" stroke="#ffb547" stroke-width="3"/><rect x="70" y="56" width="180" height="130" rx="8" fill="#243060" stroke="#8f82ff" stroke-width="2"/><circle cx="130" cy="108" r="34" fill="#111" stroke="#ccd" stroke-width="4"/><circle cx="130" cy="108" r="20" fill="#1b2a6b"/><circle cx="122" cy="100" r="5" fill="#8fb0ff"/><rect x="184" y="78" width="50" height="60" fill="#b9c0dd"/><text x="209" y="112" font-size="9" fill="#222" text-anchor="middle">ESP32</text><rect x="90" y="150" width="60" height="26" fill="#777"/><circle cx="230" cy="164" r="6" fill="#ff5a5a"/></svg>',
+A+'ESP32-S3 board"><rect x="50" y="70" width="230" height="96" rx="6" fill="#14364a" stroke="#4fd1c5" stroke-width="2"/><rect x="30" y="104" width="30" height="28" rx="4" fill="#cfd6ea"/><path d="M78 78h190M78 158h190" stroke="#ffd166" stroke-width="7" stroke-dasharray="4 5"/><rect x="176" y="92" width="92" height="52" fill="#b9c0dd"/><path d="M184 100h30v10h-30v10h30v10h-30" fill="none" stroke="#444" stroke-width="2"/><text x="236" y="122" font-size="10" font-weight="700" fill="#222" text-anchor="middle">ESP32-S3</text><rect x="96" y="104" width="46" height="28" fill="#222"/></svg>',
+A+'ESP32 series boards"><rect x="20" y="40" width="140" height="70" rx="6" fill="#243060" stroke="#8f82ff" stroke-width="2"/><rect x="84" y="50" width="66" height="50" fill="#b9c0dd"/><text x="117" y="80" font-size="10" fill="#222" text-anchor="middle">ESP32</text><rect x="160" y="90" width="140" height="70" rx="6" fill="#14364a" stroke="#4fd1c5" stroke-width="2"/><rect x="224" y="100" width="66" height="50" fill="#b9c0dd"/><text x="257" y="130" font-size="10" fill="#222" text-anchor="middle">ESP32-C3</text><rect x="20" y="150" width="120" height="60" rx="6" fill="#4a2a63" stroke="#c79bff" stroke-width="2"/><rect x="76" y="158" width="56" height="44" fill="#b9c0dd"/><text x="104" y="184" font-size="10" fill="#222" text-anchor="middle">ESP32-S2</text></svg>',
+A+'Arduino board"><rect x="40" y="50" width="240" height="140" rx="10" fill="#0b7f8c" stroke="#5fe3ee" stroke-width="2"/><rect x="22" y="70" width="50" height="44" fill="#cfd6ea"/><rect x="22" y="130" width="34" height="34" fill="#222"/><rect x="170" y="95" width="80" height="26" fill="#1a1a1a"/><rect x="110" y="100" width="36" height="36" fill="#222"/><path d="M90 58h170M90 182h170" stroke="#111" stroke-width="9"/><path d="M92 58h166M92 182h166" stroke="#ffd166" stroke-width="3" stroke-dasharray="4 4"/><text x="160" y="158" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">ARDUINO</text></svg>'];
+
+var BD=[["Raspberry Pi","Smart hubs and AI products","Home hub, AI alerts, voice and dashboards.","Raspberry Pi"],["ESP32-CAM","Camera projects","Smart doorbell, monitoring and photo capture.","ESP32-CAM"],["ESP32-S3","AI on the device","Gesture, voice and faster camera projects.","ESP32-S3"],["ESP32","Wi-Fi and Bluetooth IoT","Switches, tank level, monitors and loggers.","ESP32"],["Arduino","Simple and reliable","RFID locks, attendance, robots and school models.","Arduino"]];
+var P=[
+{t:"Smart home controller",d:"Control lights and fans from your phone, with manual switch backup.",b:"ESP32",c:"home",l:1,ty:"Home automation",bd:"ESP32"},
+{t:"Water tank level controller",d:"Motor turns on and off automatically. See tank level on display and phone.",b:"ESP32",c:"home",l:1,ty:"Home automation",bd:"ESP32"},
+{t:"Smart door lock",d:"RFID or keypad lock with entry log and alerts.",b:"Arduino",c:"home",l:2,ty:"Arduino project",bd:"Arduino"},
+{t:"ESP32-CAM smart doorbell",d:"Photo of the visitor sent to your phone when someone rings.",b:"ESP32-CAM",c:"home",l:2,ty:"ESP32-CAM project",bd:"ESP32-CAM"},
+{t:"RFID attendance system",d:"Card-based attendance with display and saved records.",b:"Arduino",c:"school",l:1,ty:"School / college project",bd:"Arduino"},
+{t:"School science project",d:"A working model for science fair or lab, with a simple explanation to present.",b:"Arduino / ESP32",c:"school",l:1,ty:"School / college project",bd:"Not sure — suggest one"},
+{t:"AI home hub",d:"Person detection alerts, voice commands and a phone dashboard.",b:"Raspberry Pi",c:"ai",l:3,ty:"AI project / product",bd:"Raspberry Pi"},
+{t:"On-device AI gadget",d:"Gesture or voice control that works without internet.",b:"ESP32-S3",c:"ai",l:3,ty:"AI project / product",bd:"ESP32-S3"},
+{t:"Power and temperature monitor",d:"Live power use and temperature with alerts for shops and offices.",b:"ESP32",c:"business",l:2,ty:"ESP32 project",bd:"ESP32"},
+{t:"Custom hardware product",d:"Tell us your idea. We design, build and brand it for you.",b:"Any board",c:"business",l:2,ty:"Custom hardware",bd:"Not sure — suggest one"}];
+var CATS=[["all","All"],["home","Home"],["school","School"],["ai","AI"],["business","Business"]],LV=["","Basic","Smart","AI"],cat="all",q="",lv=0;
+function $(i){return document.getElementById(i)}
+$("hart").innerHTML=ART[3];$("spi").innerHTML=ART[3];
+$("tabs").innerHTML=CATS.map(function(c){return '<button data-c="'+c[0]+'">'+c[1]+'</button>'}).join("");
+$("tabs").onclick=function(e){var c=e.target.getAttribute("data-c");if(c){cat=c;lv=0;draw()}};
+function draw(){[].forEach.call($("tabs").children,function(b){b.className=b.getAttribute("data-c")==cat?"on":""});var h="",n=0;
+P.forEach(function(p,i){if(cat!="all"&&p.c!=cat)return;if(lv&&p.l!=lv)return;if(q&&(p.t+" "+p.d+" "+p.b+" "+p.c).toLowerCase().indexOf(q)<0)return;n++;
+h+='<article class="pc"><div class="meta"><span class="pill">'+p.c+'</span><span>'+p.b+'</span><span class="lv l'+p.l+'">'+LV[p.l]+'</span></div><h3>'+p.t+'</h3><p>'+p.d+'</p><button class="lk" onclick="order('+i+')">Order this →</button></article>'});
+$("grid").innerHTML=h||'<p class="sub">No exact match. Describe it in the order form — we build custom products too.</p>'}
+function order(i){var p=P[i],f=$("f");f.type.value=p.ty;f.board.value=p.bd;f.msg.value="I want: "+p.t+". ";$("order").scrollIntoView();f.elements["name"].focus()}
+function find(v){q=v.toLowerCase();cat="all";lv=0;draw()}
+$("q").oninput=function(){find(this.value)};$("qb").onclick=function(){find($("q").value);$("catalog").scrollIntoView()};
+$("sb").onclick=function(){$("q").scrollIntoView();$("q").focus()};
+$("chips").innerHTML=["Home automation","ESP32-CAM","RFID lock","Raspberry Pi AI"].map(function(s){return '<button class="chip">'+s+'</button>'}).join("");
+$("chips").onclick=function(e){if(e.target.className=="chip"){var v=e.target.textContent.replace("Home automation","home").replace("RFID lock","rfid").replace("Raspberry Pi AI","raspberry");$("q").value=e.target.textContent;find(v);$("catalog").scrollIntoView()}};
+var LVD=[["Basic","Switches, relays and sensors — simple, reliable builds.","#0d8a47"],["Smart","Wi-Fi, phone control, displays and automation.","#f08a00"],["AI","Cameras, detection and multi-device systems.","#e5254a"]];
+$("lv").innerHTML=LVD.map(function(d,k){var L=k+1,items=P.filter(function(p){return p.l==L});return '<article class="card pa"><div class="row"><span>STEP 0'+L+'</span><span style="color:'+d[2]+'">● '+items.length+' products</span></div><h3>'+d[0]+'</h3><p style="margin:0;color:var(--mu)">'+d[1]+'</p><ul>'+items.slice(0,3).map(function(p){return '<li>'+p.t+'</li>'}).join("")+'</ul><button class="lk" onclick="cat=\'all\';lv='+L+';draw();$(\'catalog\').scrollIntoView()">Browse '+d[0].toLowerCase()+' builds →</button></article>'}).join("");
+$("bds").innerHTML=BD.map(function(b,i){return '<div class="bc"><div class="iv">'+ART[i]+'</div><h3>'+b[0]+'</h3><p><b>'+b[1]+'.</b> '+b[2]+'</p><button class="lk" onclick="var f=$(\'f\');f.board.value=\''+b[3]+'\';$(\'order\').scrollIntoView()">Order on '+b[0]+' →</button></div>'}).join("");
+draw();
+var dr=$("dr");function tg(){dr.classList.toggle("on")}$("mb").onclick=tg;$("ov").onclick=tg;$("cl").onclick=tg;dr.onclick=function(e){if(e.target.tagName=="A")tg()};
+var f=document.getElementById("f");
+f.addEventListener("submit",function(e){e.preventDefault();
+var d=Object.fromEntries(new FormData(f).entries());
+var id="NE"+Date.now().toString().slice(-6);
+var m="NEW ORDER "+id+" - NetraEdgeAI\nName: "+d.name+"\nPhone: "+d.phone+"\nEmail: "+(d.email||"-")+"\nAddress: "+d.addr+"\nType: "+d.type+"\nBoard: "+d.board+"\nBudget: "+(d.budget||"-")+"\nNeeded by: "+(d.date||"-")+"\nDetails: "+d.msg;
+var url="https://wa.me/"+OWNER_WA+"?text="+encodeURIComponent(m);
+if(OWNER_EMAIL){try{fetch("https://formsubmit.co/ajax/"+OWNER_EMAIL,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({order:id,name:d.name,phone:d.phone,email:d.email,_replyto:d.email,_autoresponse:"Hi "+d.name+", thank you for your order "+id+" with NetraEdgeAI. We received your request and will contact you soon on WhatsApp. - Team NetraEdgeAI",address:d.addr,type:d.type,board:d.board,budget:d.budget,needed_by:d.date,details:d.msg,_subject:"New order "+id+" from "+d.name,_captcha:"false"})}).catch(function(){})}catch(x){}}
+document.getElementById("okh").textContent="Thank you, "+d.name+"! Order "+id+" received.";
+document.getElementById("okp").textContent="Your order for "+d.type+" is ready to send. If WhatsApp did not open, tap the button below and press Send. We will contact you on "+d.phone+" soon.";
+document.getElementById("okw").href=url;f.style.display="none";document.getElementById("ok").style.display="block";
+window.open(url,"_blank")});
+
+</script></body></html>
